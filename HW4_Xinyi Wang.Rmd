@@ -2,7 +2,9 @@
 title: "HW4"
 author: "Xinyi Wang"
 date: "4/10/2023"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -82,7 +84,7 @@ ggraph(gross_tree,layout = "kk")+
 
 
 
-```{r,fig.width = 12，fig.height = 12}
+```{r,fig.width = 12,fig.height = 12}
 source=c()
 target=c()
 for(i in 1:918){
@@ -122,9 +124,13 @@ gross_long =
   mutate(Year_Released = as.integer(Year_Released))
 ```
 
+```{r}
+theme_set(theme_bw())
+```
+
 
 #original barplots
-```{r}
+```{r,fig.width = 10}
 plot1 = 
   gross_long %>% 
   ggplot(aes(Year_Released, sales_value)) +
@@ -300,7 +306,7 @@ output$main_barplot <- renderPlot({
   
 }
 
-shinyApp(ui, server)
+app = shinyApp(ui, server)
 
 ```
 
