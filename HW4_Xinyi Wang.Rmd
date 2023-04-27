@@ -149,6 +149,7 @@ plot1
 
 word = 
   gross_long %>% 
+  filter(Year_Released == c(2017,2018)) %>%
   mutate(Genre = str_split(Genre, "\\s*,\\s*")) %>% 
   unnest(Genre) %>% 
   mutate(Genre = str_to_lower(Genre)) %>% 
@@ -166,7 +167,7 @@ ggplotly(plot2, tooltip = c("x", "Count"))
 license_levels = c("Unrated","PG-13","PG","R","G")
 word1 = 
   gross_long %>% 
-  filter(Year_Released == 2015) %>% 
+  filter(Year_Released == c(2017,2018)) %>% 
   count(License)
 plot3 = ggplot(word1, aes(n, reorder(License,n))) +
   geom_col(fill = "lightgray", width = 0.6) +
