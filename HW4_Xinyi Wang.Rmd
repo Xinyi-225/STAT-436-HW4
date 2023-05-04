@@ -56,6 +56,7 @@ gross
 
 
 #node and link diagram
+**Inspirations: the two node and link diagrams come from Weiyu Xu's final portfolio, we all talk about movies, but they are from two datasets. Some codes are referred by her.  https://data-viz.it.wisc.edu/content/25821810-d41c-4e96-9c3c-acc51e4f4287/imdb-1.html**
 
 ```{r}
 normalization <- function(x) {
@@ -113,6 +114,7 @@ ggraph(Genre_tree, layout = "fr") +
 ```
 
 
+**The shiny app below come from Sirui Chu's portfolio about making barplots for reordering the genre https://krisrs1128.github.io/portfolio_site_s22/finance/2022/05/22/chu.html and Yahan Chen's HW2 about making highlighted barplots, https://cdn-uploads.piazza.com/paste/ktaxlufoq9z21w/7cef0eebd286e8145e412872475b87b1626512560f96d250850c2f4c41e4c912/stat_436_hw4.pdf. Combining them is my idea by using my dataset.**
 
 ```{r}
 gross_long =
@@ -310,6 +312,12 @@ output$main_barplot <- renderPlot({
 app = shinyApp(ui, server)
 
 ```
+
+
+
+
+
+
 
 
 
